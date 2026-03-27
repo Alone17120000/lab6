@@ -16,7 +16,7 @@ jobs:
           --token ${{ secrets.TESTIM_TOKEN }} \
           --project ${{ secrets.TESTIM_PROJECT }} \
           --suite "TS_CURA_Regression" \
-          --grid "Testim-Grid" \
+          --grid "Testim-HA-Grid" \
           --report-file results.xml
       - uses: mikepenz/action-junit-report@v4
         if: always()
