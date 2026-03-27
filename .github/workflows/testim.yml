@@ -1,6 +1,6 @@
 name: Testim AI Tests
 on: [push, pull_request]
- 
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -13,11 +13,11 @@ jobs:
       - name: Run Testim Tests
         run: |
           testim \
-            --token ${{ secrets.TESTIM_TOKEN }} \
-            --project ${{ secrets.TESTIM_PROJECT }} \
-            --suite "TS_CURA_Regression" \
-            --report-file results.xml
-            --grid "Testim-HA-Grid" \
+          --token ${{ secrets.TESTIM_TOKEN }} \
+          --project ${{ secrets.TESTIM_PROJECT }} \
+          --suite "TS_CURA_Regression" \
+          --grid "Testim-Grid" \
+          --report-file results.xml
       - uses: mikepenz/action-junit-report@v4
         if: always()
         with:
